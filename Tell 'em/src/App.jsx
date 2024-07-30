@@ -7,6 +7,7 @@ import Footer from './Components/Footer';
 import Connexion from './Pages/Connexion';
 import Inscription from './Pages/Inscription';
 import CreateTold from './Pages/CreateTold';
+import OpenSource from './Pages/OpenSource';
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path='/Connexion' element={<Connexion/>} />
           <Route path='/Inscription' element = {<Inscription />} />
+          <Route path='/OpenSource' element = {<OpenSource />} />
         </Routes>
       </main>
       <Footer />
-      
     </Router>
   );
 }
