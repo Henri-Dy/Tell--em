@@ -10,11 +10,11 @@ const OpenSource = () => {
       transition={{ duration: 0.5 }}
       className='p-4 md:p-10'
     >
-      <h1 className='text-lg uppercase text-center'>À propos</h1>
-      <h2>Bienvenue sur notre plateforme</h2>
-      <p>Notre plateforme est conçue pour offrir un espace où chacun peut s'exprimer librement et anonymement. Ici, vous pouvez partager vos pensées, idées et réflexions sur divers sujets sans craindre d'être identifié. Nous croyons que l'anonymat encourage l'honnêteté et la diversité des opinions, et nous sommes déterminés à maintenir cet environnement sécurisé et respectueux pour tous.</p>
+      <h1 className='text-lg uppercase text-start font-bold px-2'>À propos</h1>
+      <h2 className='px-2'>Bienvenue sur notre plateforme</h2>
+      <p className='text-sm mt-2 px-2'>Notre plateforme est conçue pour offrir un espace où chacun peut s'exprimer librement et anonymement. Ici, vous pouvez partager vos pensées, idées et réflexions sur divers sujets sans craindre d'être identifié. Nous croyons que l'anonymat encourage l'honnêteté et la diversité des opinions, et nous sommes déterminés à maintenir cet environnement sécurisé et respectueux pour tous.</p>
 
-      <h2 className='uppercase mt-5'>Titres</h2>
+      <h2 className='uppercase mt-5 px-2'>Titres</h2>
       {/* Daisy-UI accordion */}
       <div className="collapse collapse-arrow bg-base-200 mt-7">
         <input type="radio" name="my-accordion-2" defaultChecked />
@@ -23,14 +23,14 @@ const OpenSource = () => {
           <p>L'anonymat est au cœur de notre plateforme. En générant automatiquement des pseudonymes pour chaque utilisateur, nous assurons que personne ne peut être identifié personnellement. Cela permet à chacun de parler ouvertement et sincèrement, sans crainte de jugement ou de répercussions. Nous voulons que notre communauté soit un lieu de véritable échange et de liberté d'expression.</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Notre Mission</div>
         <div className="collapse-content">
           <p>Notre mission est de créer une communauté où les idées peuvent être partagées sans restriction, tout en garantissant un environnement respectueux. Nous voulons que chaque utilisateur se sente libre de partager ses pensées, ses questions et ses expériences, et nous nous engageons à protéger cette liberté.</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Conditions d'Utilisation</div>
         <div className="collapse-content">
@@ -48,7 +48,7 @@ const OpenSource = () => {
           </ul>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Participation et Contribution au Projet</div>
         <div className="collapse-content">
@@ -62,7 +62,7 @@ const OpenSource = () => {
           </ul>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Sécurité et Modération</div>
         <div className="collapse-content">
@@ -72,14 +72,14 @@ const OpenSource = () => {
           <p>Notre équipe de modérateurs surveille les discussions pour s'assurer qu'elles restent respectueuses et conformes à nos conditions d'utilisation. Si vous rencontrez un problème ou un contenu inapproprié, veuillez le signaler immédiatement.</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Conclusion</div>
         <div className="collapse-content">
           <p>Nous espérons que vous apprécierez l'utilisation de notre plateforme et que vous trouverez cet espace utile et inspirant. Nous sommes toujours ouverts aux suggestions et aux idées pour améliorer notre service, et nous vous encourageons à participer activement à notre communauté. Merci de faire partie de notre aventure, et profitez de votre expérience anonyme sur notre plateforme.</p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 mt-3">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">Contact</div>
         <div className="collapse-content">
@@ -91,31 +91,31 @@ const OpenSource = () => {
       {/* formulaire  */}
 
 
-<form class="max-w-[54em] mx-auto mt-[4em]">
-  <div class="relative z-0 w-full mb-5 group">
-      <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-      <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+<form className="max-w-[54em] mx-auto mt-[4em]">
+  <div className="relative z-0 w-full mb-5 group">
+      <input type="email" name="floating_email" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+      <label for="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
   </div>
  
-  <div class="grid md:grid-cols-2 md:gap-6">
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+  <div className="grid md:grid-cols-2 md:gap-6">
+    <div className="relative z-0 w-full mb-5 group">
+        <input type="text" name="floating_first_name" id="floating_first_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="floating_first_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
     </div>
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+    <div className="relative z-0 w-full mb-5 group">
+        <input type="text" name="floating_last_name" id="floating_last_name" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="floating_last_name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
     </div>
   </div>
-  <div class="grid md:grid-cols-2 md:gap-6">
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-        <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+  <div className="grid md:grid-cols-2 md:gap-6">
+    <div className="relative z-0 w-full mb-5 group">
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="floating_phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
     </div>
-    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-base-200 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500   dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+    <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+    <textarea id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-base-200 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500   dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
   </div>
-  <button type="submit" class="text-white bg-accent mt-10  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+  <button type="submit" className="text-white bg-accent mt-10  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
 </form>
 
     </motion.div>

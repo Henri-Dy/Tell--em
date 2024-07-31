@@ -1,3 +1,14 @@
+/* Iporting Tailwind Utilities*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Google Fonts*/
+
+
+.playwrite{
+  font-family: "Playwrite AR", cursive;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}

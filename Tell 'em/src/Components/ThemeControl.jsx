@@ -29,7 +29,7 @@ const ThemeControl = () => {
 
         {/* Icone soleil */}
         <svg
-          className="swap-off h-10 w-10 fill-current text-white text-xs"
+          className="swap-off h-7 w-7 fill-current text-white text-xs"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -40,7 +40,7 @@ const ThemeControl = () => {
 
         {/* Icone lune */}
         <svg
-          className="swap-on h-10 w-10 fill-current text-white text-xs"
+          className="swap-on h-7 w-7 fill-current text-white text-xs"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
         </div>
         <div className="navbar-end">
-            <a className="btn btn-ghost text-white text-xl">Tell 'Em</a>
+            <a className="btn btn-ghost text-white text-lg playwrite ">Tell 'Em</a>
             <ThemeControl />
         </div>
         </div>

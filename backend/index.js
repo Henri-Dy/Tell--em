@@ -11,7 +11,10 @@ app.use(cors());
 app.post('/told', async (req, res) => {
     try {
         const { description } = req.body; 
-        const makeTold = await pool.query('INSERT INTO told(description) VALUES($1) RETURNING *', [description]); 
+        const { created_at } = req.body;
+        const { title } = req.body;
+        const { likes } = req.body;
+        const makeTold = await pool.query('INSERT INTO told(description,created_at,title,likes) VALUES($1,$2,$3,$4) RETURNING *', [description,created_at,title,likes]); 
         res.json(makeTold.rows[0]); 
     } catch (error) {
         console.error(error.message);
@@ -39,17 +42,25 @@ app.get('/told/:id', async (req, res) => {
     }
 });
 
-// Modifier un "told"
+
+//Modifier un told 
 app.put('/told/:id', async (req, res) => {
     try {
-        const { id } = req.params; 
-        const { description } = req.body; 
-        await pool.query('UPDATE told SET description = $1 WHERE told_id = $2', [description, id]);
+        const { id } = req.params;
+        const { description, title } = req.body;  // Récupérer description et title en une seule ligne
+        
+        await pool.query(
+            'UPDATE told SET description = $1, title = $2 WHERE told_id = $3',
+            [description, title, id]
+        );
+        
         res.json('Told edited successfully'); 
     } catch (error) {
         console.error(error.message);
+        res.status(500).json('Error updating told');
     }
 });
+
 
 // Supprimer un "told"
 app.delete('/told/:id', async (req, res) => {
@@ -61,6 +72,20 @@ app.delete('/told/:id', async (req, res) => {
         console.error(error.message);
     }
 });
+
+//Update les likes 
+app.put('/update_likes/:id' , async (req , res )=>{
+    try {
+        const {id} = req.params ; 
+        const {likes} = req.body ;
+
+        const newLikes = await pool.query('UPDATE told SET likes = $1 WHERE told_id =$2 RETURNING *' , [likes,id]) ;
+        res.json(newLikes.rows[0]) ;
+        console.log('successfully updated !');
+    } catch (error) {
+        console.error(error.message);
+    }
+})
 
 /*----------------------------------------------------------------- */
 // Configuration du serveur 
