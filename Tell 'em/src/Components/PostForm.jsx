@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+;
 
 const PostForm = () => {
   /*use state hooks*/
@@ -35,7 +35,7 @@ const PostForm = () => {
         likes
       });
       console.log("Post sent successfully");
-      
+      window.location.reload() ;
     } catch (error) {
       console.error('Error sending post', error.message);
     }

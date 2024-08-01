@@ -69,10 +69,11 @@ app.delete('/told/:id', async (req, res) => {
         const { id } = req.params;
         await pool.query('DELETE FROM told WHERE told_id = $1', [id]);
         res.json('Told deleted successfully');
+        console.log('succesfully deleted !');
     } catch (error) {
         console.error(error.message);
     }
-});
+}); 
 
 //Update les likes 
 app.put('/update_likes/:id' , async (req , res )=>{
@@ -87,6 +88,8 @@ app.put('/update_likes/:id' , async (req , res )=>{
         console.error(error.message);
     }
 })
+
+
 
 /*----------------------------------------------------------------- */
 // Configuration du serveur 

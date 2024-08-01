@@ -8,18 +8,16 @@ const HomeCard = () => {
     const [told, setTold] = useState([]);
     const [stateLikes, setStateLikes] = useState(false);
 
-    // Pour obtenir l'heure actuelle
     useEffect(() => {
         const currentTime = new Date();
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const day = daysOfWeek[currentTime.getDay()];
         const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes().toString().padStart(2, '0'); // Pour s'assurer que les minutes ont toujours deux chiffres
+        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
         const time = `${day} ${hours}h${minutes}`;
         setPostedAt(time);
     }, []);
 
-    // Pour obtenir les données "told"
     const getTold = async () => {
         try {
             const response = await axios.get("http://localhost:5000/told");
@@ -29,13 +27,11 @@ const HomeCard = () => {
         }
     };
 
-    // Fonction pour gérer la suppression d'un élément
     const handleDeleteStatusChange = async (status, id) => {
         if (status) {
             try {
                 await axios.delete(`http://localhost:5000/told/${id}`);
                 console.log("Deleted successfully");
-                // Mettre à jour l'état pour supprimer l'élément de la liste
                 setTold(told.filter(item => item.told_id !== id));
             } catch (error) {
                 console.error('Error while deleting Told', error.message);
@@ -43,17 +39,16 @@ const HomeCard = () => {
         }
     };
 
-    //Mettre a jour les likes 
     const handleLikes = async (id, currentLikes) => {
         const newLikes = stateLikes ? currentLikes - 1 : currentLikes + 1;
         setStateLikes(!stateLikes);
 
         try {
-            const response = await axios.put(`http://localhost:5000/update_likes/${id}`, {
+            await axios.put(`http://localhost:5000/update_likes/${id}`, {
                 likes: newLikes
             });
             console.log(stateLikes ? 'Likes deleted successfully!' : 'Likes added successfully!');
-            setTold(told.map(item => 
+            setTold(told.map(item =>
                 item.told_id === id ? { ...item, likes: newLikes } : item
             ));
         } catch (error) {
@@ -70,9 +65,11 @@ const HomeCard = () => {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-4 relative">
             {told.map((item, index) => (
                 <div className='border border-accent rounded-lg' key={index} >
-                    {/* Home card action menu */}
                     <div className="card bg-base-100 shadow-lg">
-                        <HomeCardActionMenu sendDellStateToParent={(status) => handleDeleteStatusChange(status, item.told_id)} />
+                        <HomeCardActionMenu
+                            sendDellStateToParent={(status) => handleDeleteStatusChange(status, item.told_id)}
+                            sendEditInfosToChild={item}
+                        />
                         <div className="card-body ">
                             <h2 className="card-title uppercase">{item.title}</h2>
                             <p className='text-xs'>{item.description}</p>
