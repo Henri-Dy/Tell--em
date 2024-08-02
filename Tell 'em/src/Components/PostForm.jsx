@@ -28,7 +28,7 @@ const PostForm = () => {
     setCreatedAt(currentTime);
     
     try {
-      await axios.post('http://localhost:5000/told', {
+      await axios.post('http://192.168.1.198:5000/told', {
         title,
         description,
         created_at: postedAt,

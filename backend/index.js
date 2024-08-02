@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const pool = require('./db'); 
-require('dotenv').config();
+
 
 app.use(express.json());
 app.use(cors());
@@ -17,6 +17,7 @@ app.post('/told', async (req, res) => {
         const { likes } = req.body;
         const makeTold = await pool.query('INSERT INTO told(description,created_at,title,likes) VALUES($1,$2,$3,$4) RETURNING *', [description,created_at,title,likes]); 
         res.json(makeTold.rows[0]); 
+        console.log('succesfully posted !');
     } catch (error) {
         console.error(error.message);
     }
@@ -25,8 +26,10 @@ app.post('/told', async (req, res) => {
 // Obtenir tous les "told"
 app.get('/told', async (req, res) => {
     try {
-        const allTold = await pool.query('SELECT * FROM told'); 
+        const allTold = await pool.query('SELECT * FROM told ORDER BY told_id DESC'); 
         res.json(allTold.rows);
+        
+        console.log(allTold.rows);
     } catch (error) {
         console.error(error.message);
     }

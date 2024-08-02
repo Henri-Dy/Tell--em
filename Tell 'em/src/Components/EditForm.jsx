@@ -16,11 +16,12 @@ const EditForm = ({ onClose, editInfos }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/told/${edit.told_id}`, {
+            await axios.put(`http://192.168.1.198:5000/told/${edit.told_id}`, {
                 title,
                 description,
             });
-            onClose(); // Ferme le formulaire après la soumission réussie
+            onClose();
+            window.location.reload() // Ferme le formulaire après la soumission réussie
         } catch (error) {
             console.error(error.message);
         }
@@ -38,7 +39,7 @@ const EditForm = ({ onClose, editInfos }) => {
                 <input
                     type="text"
                     placeholder="Type here"
-                    className="input input-accent w-full"
+                    className="input input-accent w-full uppercase"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
@@ -48,7 +49,7 @@ const EditForm = ({ onClose, editInfos }) => {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
-                <button className='btn btn-accent text-white w-full' type="submit">Submit</button>
+                <button className='btn btn-accent text-white w-full' type="submit">Edit</button>
             </form>
             <div className='absolute top-0 flex justify-end items-center w-full mr-[2em] mt-4'>
                 <i
