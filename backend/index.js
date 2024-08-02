@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const pool = require('./db'); // Assurez-vous que le chemin vers db.js est correct
+const pool = require('./db'); 
+require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
